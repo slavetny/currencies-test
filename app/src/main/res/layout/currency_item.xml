@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/currency_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/default_text_size"
+        android:layout_gravity="center|left"
+        android:layout_marginStart="@dimen/default_margin" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/currency_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|right"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+</androidx.cardview.widget.CardView>

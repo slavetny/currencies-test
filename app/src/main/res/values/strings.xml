@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Currencies Test</string>
+
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
+
+    <string name="search_hint">Enter currency name here:</string>
+</resources>

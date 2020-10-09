@@ -1,4 +1,4 @@
-package com.slavetny.test.presentation.screen
+package com.slavetny.test.presentation
 
 import android.text.Editable
 import android.text.TextWatcher

@@ -4,6 +4,7 @@ import com.slavetny.test.data.db.CurrenciesEntity
 import com.slavetny.test.data.db.CurrenciesDao
 import com.slavetny.test.data.network.CurrenciesService
 import com.slavetny.test.data.network.Result
+import com.slavetny.test.domain.model.Convert
 
 class CurrenciesRepositoryImpl(
     private val apiService: CurrenciesService,
@@ -12,6 +13,9 @@ class CurrenciesRepositoryImpl(
 
     override suspend fun getCurrencies() =
         Result(apiService.getCurrencies(), null)
+
+    override suspend fun getConvertedCurrency(currencyFrom: String, currencyTo: String, amount: Int) =
+        Result(apiService.getConvertedValue(currencyFrom, currencyTo, amount), null)
 
     override suspend fun getAllCurrencies() =
         currenciesDao.getCurrencies()

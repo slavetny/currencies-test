@@ -9,12 +9,26 @@
         android:id="@+id/currencies"
         android:label="All Currencies"
         android:name="com.slavetny.test.presentation.screen.allcurrencies.AllCurrenciesFragment"
-        tools:layout="@layout/fragment_allcurrencies" />
+        tools:layout="@layout/fragment_allcurrencies" >
+        <action
+            android:id="@+id/action_currencies_to_converter"
+            app:destination="@id/converter" />
+    </fragment>
 
     <fragment
         android:id="@+id/favorite"
         android:label="My Currencies"
         android:name="com.slavetny.test.presentation.screen.mycurrencies.MyCurrenciesFragment"
-        tools:layout="@layout/fragment_mycurrencies"/>
+        tools:layout="@layout/fragment_mycurrencies">
+        <action
+            android:id="@+id/action_favorite_to_converter"
+            app:destination="@id/converter" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/converter"
+        android:label="Converter"
+        android:name="com.slavetny.test.presentation.screen.converter.ConverterFragment"
+        tools:layout="@layout/fragment_converter" />
 
 </navigation>

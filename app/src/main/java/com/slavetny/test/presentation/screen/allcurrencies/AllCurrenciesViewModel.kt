@@ -42,13 +42,4 @@ class AllCurrenciesViewModel(
             currenciesRepository.addCurrencyInFavorite(currencies)
         }
     }
-
-    fun deleteCurrency(name: String) {
-        val currencies = CurrenciesEntity()
-        currencies.name = name
-
-        viewModelScope.launch(Dispatchers.IO) {
-            currenciesRepository.deleteCurrency(currencies)
-        }
-    }
 }

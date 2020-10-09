@@ -65,6 +65,5 @@ class MyCurrenciesFragment : Fragment(R.layout.fragment_mycurrencies) {
         frg_recyclerView.layoutManager = LinearLayoutManager(requireContext())
         frg_recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         frg_recyclerView.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.default_margin).toInt()))
-        LinearSnapHelper().attachToRecyclerView(frg_recyclerView)
     }
 }

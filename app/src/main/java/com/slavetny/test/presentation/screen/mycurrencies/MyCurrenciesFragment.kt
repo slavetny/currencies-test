@@ -7,12 +7,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
 import com.slavetny.test.R
 import com.slavetny.test.domain.extension.observeNotNull
 import com.slavetny.test.presentation.adapter.CurrenciesAdapter
 import com.slavetny.test.presentation.adapter.MarginItemDecoration
-import kotlinx.android.synthetic.main.fragment_allcurrencies.*
+import kotlinx.android.synthetic.main.fragment_mycurrencies.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
 
@@ -49,6 +48,8 @@ class MyCurrenciesFragment : Fragment(R.layout.fragment_mycurrencies) {
                     filteredMap.put(it, currenciesMap.get(it)!!)
                 }
 
+                frg_progress_bar.visibility = View.GONE
+
                 adapter.attachData(filteredMap.toSortedMap())
             }
         }
@@ -60,10 +61,10 @@ class MyCurrenciesFragment : Fragment(R.layout.fragment_mycurrencies) {
     }
 
     private fun setRecyclerView() {
-        frg_recyclerView.adapter = adapter
+        frg_recycler_view.adapter = adapter
         adapter.isFavorite = true
-        frg_recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        frg_recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
-        frg_recyclerView.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.default_margin).toInt()))
+        frg_recycler_view.layoutManager = LinearLayoutManager(requireContext())
+        frg_recycler_view.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+        frg_recycler_view.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.default_margin).toInt()))
     }
 }

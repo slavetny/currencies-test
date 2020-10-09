@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.slavetny.test.data.repository.CurrenciesRepository
 import com.slavetny.test.domain.model.Convert
-import com.slavetny.test.domain.model.Currencies
 import kotlinx.coroutines.launch
 
 class ConverterViewModel(

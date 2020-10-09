@@ -5,4 +5,6 @@
     <string name="converter_hint">Enter your value here:</string>
 
     <string name="converter_button">Convert</string>
+
+    <string name="converter_screen">Converter from USD to EUR</string>
 </resources>

@@ -12,6 +12,7 @@ import com.slavetny.test.presentation.adapter.CurrenciesAdapter
 import com.slavetny.test.presentation.DynamicTextWatcher
 import com.slavetny.test.presentation.adapter.MarginItemDecoration
 import kotlinx.android.synthetic.main.fragment_allcurrencies.*
+import kotlinx.android.synthetic.main.fragment_mycurrencies.frg_recycler_view
 import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
 
@@ -34,9 +35,9 @@ class AllCurrenciesFragment : Fragment(R.layout.fragment_allcurrencies) {
     }
 
     private fun search() {
-        frg_editText.addTextChangedListener(DynamicTextWatcher(
+        frg_edit_text.addTextChangedListener(DynamicTextWatcher(
                 onChanged = { p0, _, _, _ ->
-                    if (p0.toString() != "") {
+                    if (!p0.isNullOrBlank()) {
 
                         val filteredMap: MutableMap<String, Double> = mutableMapOf()
 
@@ -63,6 +64,8 @@ class AllCurrenciesFragment : Fragment(R.layout.fragment_allcurrencies) {
                 )
             }
 
+            frg_progress_bar.visibility = View.GONE
+
             adapter.attachData(currenciesMap.toSortedMap())
         }
 
@@ -72,10 +75,10 @@ class AllCurrenciesFragment : Fragment(R.layout.fragment_allcurrencies) {
     }
 
     private fun setRecyclerView() {
-        frg_recyclerView.adapter = adapter
+        frg_recycler_view.adapter = adapter
         adapter.isFavorite = false
-        frg_recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        frg_recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
-        frg_recyclerView.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.default_margin).toInt()))
+        frg_recycler_view.layoutManager = LinearLayoutManager(requireContext())
+        frg_recycler_view.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+        frg_recycler_view.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.default_margin).toInt()))
     }
 }

@@ -1,6 +1,7 @@
 package com.slavetny.test.di
 
 import com.slavetny.test.data.network.CurrenciesService
+import com.slavetny.test.domain.constants.Constants
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -19,7 +20,7 @@ fun provideDefaultOkhttpClient(): OkHttpClient {
 
 fun provideRetrofit(client: OkHttpClient): Retrofit {
     return Retrofit.Builder()
-        .baseUrl("https://api.exchangerate.host/")
+        .baseUrl(Constants.BASE_URL)
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()

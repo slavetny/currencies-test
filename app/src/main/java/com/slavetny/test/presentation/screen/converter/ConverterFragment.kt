@@ -23,7 +23,7 @@ class ConverterFragment : Fragment(R.layout.fragment_converter) {
             viewModel.getConvertedValue(
                 "USD",
                 "EUR",
-                frg_converter_editText.text.toString().toInt()
+                frg_converter_edit_text.text.toString().toInt()
             )
         }
 
@@ -32,7 +32,7 @@ class ConverterFragment : Fragment(R.layout.fragment_converter) {
 
     private fun subscribeObservers() {
         viewModel.convertedCurrencyLiveData.observeNotNull(requireActivity()) {
-            frg_result_textView.text = it.result.toString()
+            frg_result_text_view.text = it.result.toString()
 
         }
 
